@@ -1,0 +1,21 @@
+name: Deploy to Cloud Foundry
+
+on:
+  push:
+    branches:
+    - production
+
+jobs:
+  deploy:
+    runs-on: ubuntu-18.04
+    steps:
+    - name: CF Push Job1
+      uses: dg4101/cf-cli@cf-cli-html
+      with:
+        cf_api: https://api.cf.eu10.hana.ondemand.com
+        cf_username: ${{ secrets.CF_USER }}
+        cf_password: ${{ secrets.CF_PASSWORD }}
+        cf_org: i030702trial
+        cf_space: dev
+        git_repo: https://github.com/dg4101/covid19.git
+#        command: echo start
