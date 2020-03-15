@@ -17,5 +17,4 @@ jobs:
         cf_password: ${{ secrets.CF_PASSWORD }}
         cf_org: i030702trial
         cf_space: dev
-        git_repo: https://github.com/dg4101/covid19.git
 #        command: echo start

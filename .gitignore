@@ -116,6 +116,4 @@ APIExternalProducer.js
 /mta_archives/
 
 # SCP related
-.github/workflows/*
-cf/*
 .gitignore
