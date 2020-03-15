@@ -1,0 +1,20 @@
+name: Deploy to Cloud Foundry
+
+on:
+  push:
+    branches:
+    - dev-scp-dummy
+
+jobs:
+  deploy:
+    runs-on: ubuntu-18.04
+    steps:
+    - name: CF Push Job
+      uses: dg4101/cf-cli@master
+      with:
+        cf_api: https://api.cf.eu10.hana.ondemand.com
+        cf_username: ${{ secrets.CF_USER }}
+        cf_password: ${{ secrets.CF_PASSWORD }}
+        cf_org: i030702trial
+        cf_space: dev
+#        command: echo start
