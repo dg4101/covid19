@@ -3,14 +3,14 @@ name: Deploy to Cloud Foundry
 on:
   push:
     branches:
-    - dev-scp-dummy
+    - dev-scp
 
 jobs:
   deploy:
     runs-on: ubuntu-18.04
     steps:
     - name: CF Push Job
-      uses: dg4101/cf-cli@master
+      uses: dg4101/cf-cli@cf-cli-html
       with:
         cf_api: https://api.cf.eu10.hana.ondemand.com
         cf_username: ${{ secrets.CF_USER }}
