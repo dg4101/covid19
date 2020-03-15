@@ -118,3 +118,4 @@ APIExternalProducer.js
 # SCP related
 cf/*
 .gitignore
+.github/workflows/deploycf.yml
