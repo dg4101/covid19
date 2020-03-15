@@ -93,7 +93,7 @@
     "新型コロナコールセンター相談件数": "コロナウイルス そうだんで でんわが あった かず",
     "新型コロナ受診相談窓口相談件数": "コロナのことで とうきょうと に そうだんした ひとの かず",
     "都営地下鉄の利用者数の推移": "とえいちかてつを つかった ひとの かず",
-    "都庁来庁者数の推移": "議事堂（ぎじどう）に 来（き）た 人（ひと）の 合計（ごうけい）"
+    "都庁来庁者数の推移": "都庁（とちょう）に 来（き）た 人（ひと）の 合計（ごうけい）"
   }
 }
 </i18n>
@@ -167,7 +167,9 @@ export default {
   },
   head() {
     const url = 'https://stopcovid19.metro.tokyo.lg.jp'
-    const ogpImage = url + '/ogp-' + this.$route.params.card + '.png'
+    const timestamp = new Date().getTime()
+    const ogpImage =
+      url + '/ogp-' + this.$route.params.card + '.png?t=' + timestamp
     const description =
       this.updatedAt +
       ' 更新 | ' +
