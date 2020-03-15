@@ -1,9 +1,11 @@
 name: Deploy to Cloud Foundry
 
 on:
-  push:
-    branches:
-    - production
+  repository_dispatch:
+    types: [ProdRepPush]
+#  push:
+#    branches:
+#    - production
 
 jobs:
   deploy:
