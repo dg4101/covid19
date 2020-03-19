@@ -9,6 +9,11 @@
           {{ title }}
         </h3>
         <slot name="infoPanel" />
+      </div>
+      <div class="DataView-Description">
+        <slot name="description" />
+      </div>
+      <div>
         <slot name="button" />
       </div>
       <div class="DataView-CardText">
@@ -276,6 +281,15 @@ export default Vue.extend({
   &-CardText {
     margin: 16px 0;
   }
+  &-Description {
+    margin: 10px 0 0;
+    font-size: 12px;
+    color: $gray-3;
+    ul {
+      list-style-type: none;
+      padding: 0;
+    }
+  }
   &-CardTextForXS {
     margin-bottom: 46px;
     margin-top: 70px;
@@ -329,7 +343,7 @@ export default Vue.extend({
         border-radius: 8px;
         text-align: left;
         font-size: 1rem;
-        z-index: 9000;
+        z-index: 1;
 
         > * {
           padding: 4px 0px;
@@ -393,7 +407,7 @@ export default Vue.extend({
     display: flex;
     align-items: center;
     justify-content: center;
-    z-index: 9000;
+    z-index: 1;
     top: 0;
     left: 0;
     width: 100%;
