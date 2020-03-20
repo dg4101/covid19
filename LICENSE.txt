@@ -1,4 +1,4 @@
-MIT License1
+MIT License2
 
 Copyright (c) 2020 Tokyo Metropolitan Government
 
