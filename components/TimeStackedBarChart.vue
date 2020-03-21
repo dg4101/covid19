@@ -54,6 +54,7 @@
 
 <script lang="ts">
 import Vue from 'vue'
+import moment from 'moment'
 import { ThisTypedComponentOptionsWithRecordProps } from 'vue/types/options'
 import { TranslateResult } from 'vue-i18n'
 import DataView from '@/components/DataView.vue'
@@ -354,8 +355,10 @@ const options: ThisTypedComponentOptionsWithRecordProps<
                     'Nov',
                     'Dec'
                   ]
-                  const month = monthStringArry.indexOf(label.split(' ')[0]) + 1
-                  return month + '月'
+                  const mm = monthStringArry.indexOf(label.split(' ')[0]) + 1
+                  const month = moment(moment().year() + '-' + mm + '-1')
+                  month.locale(this.$root.$i18n.locale)
+                  return month.format('MMM')
                 }
               },
               type: 'time',
