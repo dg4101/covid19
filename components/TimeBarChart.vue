@@ -42,7 +42,6 @@
 
 <script lang="ts">
 import Vue from 'vue'
-import moment from 'moment'
 import { ThisTypedComponentOptionsWithRecordProps } from 'vue/types/options'
 import { GraphDataType } from '@/utils/formatGraph'
 import DataView from '@/components/DataView.vue'
@@ -293,9 +292,9 @@ const options: ThisTypedComponentOptionsWithRecordProps<
                     'Dec'
                   ]
                   const mm = monthStringArry.indexOf(label.split(' ')[0]) + 1
-                  const month = moment(moment().year() + '-' + mm + '-1')
-                  month.locale(this.$root.$i18n.locale)
-                  return month.format('MMM')
+                  const year = new Date().getFullYear()
+                  const mdate = new Date(year + '-' + mm + '-1')
+                  return mdate.toLocaleString(this.$root.$i18n.locale, { month: 'short' })
                 }
               },
               type: 'time',
