@@ -357,7 +357,7 @@ const options: ThisTypedComponentOptionsWithRecordProps<
                   const mm = monthStringArry.indexOf(label.split(' ')[0]) + 1
                   const year = new Date().getFullYear()
                   const mdate = new Date(year + '-' + mm + '-1')
-                  return mdate.toLocaleString(this.$root.$i18n.locale, {month:'short'})
+                  return mdate.toLocaleString(this.$root.$i18n.locale, { month: 'short' })
                 }
               },
               type: 'time',
