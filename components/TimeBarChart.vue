@@ -21,6 +21,7 @@
       :options="displayOption"
       :height="240"
     />
+<<<<<<< HEAD
     <v-data-table
       :style="{ top: '-9999px', position: canvas ? 'fixed' : 'static' }"
       :headers="tableHeaders"
@@ -34,6 +35,11 @@
       class="cardTable"
       item-key="name"
     />
+=======
+    <div class="note">
+      {{ note }}
+    </div>
+>>>>>>> f74b1c1624cf67178e8153bb3ffbc2fd6d34cb5e
     <template v-slot:infoPanel>
       <data-view-basic-info-panel
         :l-text="displayInfo.lText"
@@ -47,11 +53,23 @@
   </data-view>
 </template>
 
+<<<<<<< HEAD
 <script lang="ts">
 import Vue from 'vue'
 import { TranslateResult } from 'vue-i18n'
 import { ThisTypedComponentOptionsWithRecordProps } from 'vue/types/options'
 import { GraphDataType } from '@/utils/formatGraph'
+=======
+<style>
+.note {
+  padding: 8px;
+  font-size: 12px;
+  color: #808080;
+}
+</style>
+
+<script>
+>>>>>>> f74b1c1624cf67178e8153bb3ffbc2fd6d34cb5e
 import DataView from '@/components/DataView.vue'
 import DataSelector from '@/components/DataSelector.vue'
 import DataViewBasicInfoPanel from '@/components/DataViewBasicInfoPanel.vue'
@@ -153,6 +171,11 @@ const options: ThisTypedComponentOptionsWithRecordProps<
       type: String,
       default: ''
     },
+    note: {
+      type: String,
+      required: false,
+      default: ''
+    },
     url: {
       type: String,
       default: ''
@@ -177,7 +200,11 @@ const options: ThisTypedComponentOptionsWithRecordProps<
       if (this.dataKind === 'transition') {
         return {
           lText: `${this.chartData.slice(-1)[0].transition.toLocaleString()}`,
+<<<<<<< HEAD
           sText: `${this.$t('実績値')}（${this.$t('前日比')}: ${
+=======
+          sText: `${this.$t('実績値')}（${this.$t('前日比')}：${
+>>>>>>> f74b1c1624cf67178e8153bb3ffbc2fd6d34cb5e
             this.displayTransitionRatio
           } ${this.unit}）`,
           unit: this.unit
@@ -207,7 +234,11 @@ const options: ThisTypedComponentOptionsWithRecordProps<
               data: this.chartData.map(d => {
                 return d.transition
               }),
+<<<<<<< HEAD
               backgroundColor: color,
+=======
+              backgroundColor: '#2445b5',
+>>>>>>> f74b1c1624cf67178e8153bb3ffbc2fd6d34cb5e
               borderWidth: 0
             }
           ]
@@ -221,7 +252,11 @@ const options: ThisTypedComponentOptionsWithRecordProps<
             data: this.chartData.map(d => {
               return d.cumulative
             }),
+<<<<<<< HEAD
             backgroundColor: color,
+=======
+            backgroundColor: '#2445b5',
+>>>>>>> f74b1c1624cf67178e8153bb3ffbc2fd6d34cb5e
             borderWidth: 0
           }
         ]
@@ -230,18 +265,39 @@ const options: ThisTypedComponentOptionsWithRecordProps<
     displayOption() {
       const unit = this.unit
       const scaledTicksYAxisMax = this.scaledTicksYAxisMax
+<<<<<<< HEAD
       const options = {
         tooltips: {
           displayColors: false,
           callbacks: {
             label(tooltipItem: any) {
+=======
+      const self = this
+      return {
+        tooltips: {
+          displayColors: false,
+          callbacks: {
+            label(tooltipItem) {
+>>>>>>> f74b1c1624cf67178e8153bb3ffbc2fd6d34cb5e
               const labelText = `${parseInt(
                 tooltipItem.value
               ).toLocaleString()} ${unit}`
               return labelText
             },
+<<<<<<< HEAD
             title(tooltipItem: any, data: any) {
               return data.labels[tooltipItem[0].index]
+=======
+            title(tooltipItem, data) {
+              const matches = data.labels[tooltipItem[0].index].match(
+                /(\w+)\/(\w+)/
+              )
+
+              return self.$t('{month}月{date}日', {
+                month: matches[1],
+                date: matches[2]
+              })
+>>>>>>> f74b1c1624cf67178e8153bb3ffbc2fd6d34cb5e
             }
           }
         },

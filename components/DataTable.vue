@@ -13,9 +13,15 @@
       :fixed-header="true"
       :mobile-breakpoint="0"
       class="cardTable"
+      :custom-sort="customSort"
     />
     <div class="note">
+<<<<<<< HEAD
       {{ $t('※退院には、死亡退院を含む') }}
+=======
+      {{ $t('※退院とは新型コロナウイルス感染症が治癒した者') }}<br />
+      {{ $t('※退院には死亡退院を含む') }}
+>>>>>>> f74b1c1624cf67178e8153bb3ffbc2fd6d34cb5e
     </div>
     <template v-slot:infoPanel>
       <data-view-basic-info-panel
@@ -93,8 +99,15 @@ import DataView from '@/components/DataView.vue'
 import DataViewBasicInfoPanel from '@/components/DataViewBasicInfoPanel.vue'
 import OpenDataLink from '@/components/OpenDataLink.vue'
 
+<<<<<<< HEAD
 export default Vue.extend({
   components: { DataView, DataViewBasicInfoPanel, OpenDataLink },
+=======
+const excludeAges = ['就学児', '未就学児']
+
+export default {
+  components: { DataView, DataViewBasicInfoPanel },
+>>>>>>> f74b1c1624cf67178e8153bb3ffbc2fd6d34cb5e
   props: {
     title: {
       type: String,
@@ -121,6 +134,7 @@ export default Vue.extend({
       default: ''
     }
   },
+<<<<<<< HEAD
   mounted() {
     const vTables = this.$refs.displayedTable as Vue
     const vTableElement = vTables.$el
@@ -129,6 +143,62 @@ export default Vue.extend({
     tables.forEach((table: HTMLElement) => {
       table.setAttribute('tabindex', '0')
     })
+=======
+  methods: {
+    customSort(items, index, isDescending) {
+      if (isDescending[0] === undefined) return items
+      if (index[0] === '年代') {
+        return this.createSortAgeData(items, index[0], isDescending[0])
+      } else {
+        items.sort((a, b) => {
+          if (b[index[0]] < a[index[0]]) {
+            return isDescending[0] ? -1 : 1
+          } else {
+            return isDescending[0] ? 1 : -1
+          }
+        })
+      }
+      return items
+    },
+    createSortAgeData(items, index, isDescending) {
+      const excludeItems = {}
+      const translatedAges = excludeAges.map(v => this.$t(v))
+
+      const filterItems = items.filter(item => {
+        if (translatedAges.includes(item[index])) {
+          excludeItems[item[index]] = excludeItems[item[index]] || []
+          excludeItems[item[index]].push(item)
+          return false
+        } else {
+          return true
+        }
+      })
+
+      filterItems.sort((a, b) => {
+        if (b[index] < a[index]) {
+          return 1
+        } else {
+          return -1
+        }
+      })
+
+      translatedAges.forEach(v => {
+        if (!excludeItems[v]) {
+          return
+        }
+
+        excludeItems[v].forEach(item => {
+          filterItems.unshift(item)
+        })
+      })
+
+      if (isDescending) {
+        filterItems.reverse()
+      }
+
+      return filterItems
+    }
+>>>>>>> f74b1c1624cf67178e8153bb3ffbc2fd6d34cb5e
   }
 })
 </script>

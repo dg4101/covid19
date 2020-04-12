@@ -1,7 +1,11 @@
 import { Configuration } from '@nuxt/types'
+<<<<<<< HEAD
 import { Configuration as WebpackConfiguration } from 'webpack'
 import i18n from './nuxt-i18n.config'
 const webpack = require('webpack')
+=======
+import i18n from './nuxt-i18n.config'
+>>>>>>> f74b1c1624cf67178e8153bb3ffbc2fd6d34cb5e
 const purgecss = require('@fullhuman/postcss-purgecss')
 const autoprefixer = require('autoprefixer')
 const environment = process.env.NODE_ENV || 'development'
@@ -15,22 +19,56 @@ const config: Configuration = {
     htmlAttrs: {
       prefix: 'og: http://ogp.me/ns#'
     },
-    titleTemplate: '%s | 東京都 新型コロナウイルス感染症対策サイト',
+    titleTemplate: '%s | 大阪府 新型コロナウイルス感染症対策サイト',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+<<<<<<< HEAD
+=======
+      {
+        hid: 'description',
+        name: 'description',
+        content:
+          '当サイトは新型コロナウイルス感染症（COVID-19）に関する最新情報を提供するために、大阪府が開設したものです。'
+      },
+      {
+        hid: 'og:site_name',
+        property: 'og:site_name',
+        content: '大阪府 新型コロナウイルス感染症対策サイト'
+      },
+>>>>>>> f74b1c1624cf67178e8153bb3ffbc2fd6d34cb5e
       { hid: 'og:type', property: 'og:type', content: 'website' },
       {
         hid: 'og:url',
         property: 'og:url',
-        content: 'https://stopcovid19.metro.tokyo.lg.jp'
+        content: 'https://covid19-osaka.info/'
       },
       {
+<<<<<<< HEAD
+=======
+        hid: 'og:title',
+        property: 'og:title',
+        content: '大阪府 新型コロナウイルス感染症対策サイト'
+      },
+      {
+        hid: 'og:description',
+        property: 'og:description',
+        content:
+          '当サイトは新型コロナウイルス感染症（COVID-19）に関する最新情報を提供するために、大阪府が開設したものです。'
+      },
+      {
+        hid: 'og:image',
+        property: 'og:image',
+        content: 'https://covid19-osaka.info/ogp.png'
+      },
+      {
+>>>>>>> f74b1c1624cf67178e8153bb3ffbc2fd6d34cb5e
         hid: 'twitter:card',
         name: 'twitter:card',
         content: 'summary_large_image'
       },
       {
+<<<<<<< HEAD
         hid: 'twitter:site',
         name: 'twitter:site',
         content: '@tokyo_bousai'
@@ -49,6 +87,16 @@ const config: Configuration = {
         hid: 'note:card',
         property: 'note:card',
         content: 'summary_large_image'
+=======
+        hid: 'twitter:image',
+        name: 'twitter:image',
+        content: 'https://covid19-osaka.info/ogp.png'
+      },
+      {
+        hid: 'apple-mobile-web-app-title',
+        name: 'apple-mobile-web-app-title',
+        content: '大阪府コロナウィルス対策サイト'
+>>>>>>> f74b1c1624cf67178e8153bb3ffbc2fd6d34cb5e
       }
     ],
     link: [
@@ -100,7 +148,11 @@ const config: Configuration = {
   modules: [
     '@nuxtjs/pwa',
     // Doc: https://github.com/nuxt-community/dotenv-module
+<<<<<<< HEAD
     ['@nuxtjs/dotenv', { filename: `.env.${environment}` }],
+=======
+    '@nuxtjs/dotenv',
+>>>>>>> f74b1c1624cf67178e8153bb3ffbc2fd6d34cb5e
     ['nuxt-i18n', i18n],
     'nuxt-svg-loader',
     'nuxt-purgecss',
@@ -117,7 +169,7 @@ const config: Configuration = {
     }
   },
   googleAnalytics: {
-    id: 'UA-159417676-1'
+    id: 'UA-160707556-1'
   },
   build: {
     plugins: [
@@ -149,8 +201,8 @@ const config: Configuration = {
     // hardSource: process.env.NODE_ENV === 'development'
   },
   manifest: {
-    name: '東京都 新型コロナウイルス感染症対策サイト',
-    theme_color: '#00a040',
+    name: '大阪府 新型コロナウイルス感染症対策サイト',
+    theme_color: '#364c97',
     background_color: '#ffffff',
     display: 'standalone',
     Scope: '/',

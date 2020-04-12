@@ -1,9 +1,18 @@
 <template>
   <data-view :title="title" :title-id="titleId" :date="date">
+<<<<<<< HEAD
     <template v-slot:infoPanel>
       <small :class="$style.DataViewDesc">
         <slot name="description" />
       </small>
+=======
+    <template v-slot:button>
+      <p class="MetroGraph-Desc">
+        {{ chartData.base_period }}の利用者数*の平均値を基準としたときの相対値
+        <br />
+        *府営地下鉄4路線の自動改札出場数
+      </p>
+>>>>>>> f74b1c1624cf67178e8153bb3ffbc2fd6d34cb5e
     </template>
     <h4 :id="`${titleId}-graph`" class="visually-hidden">
       {{ $t(`{title}のグラフ`, { title }) }}

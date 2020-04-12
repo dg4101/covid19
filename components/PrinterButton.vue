@@ -1,5 +1,6 @@
 <template>
   <div :class="wrapperClass">
+<<<<<<< HEAD
     <v-btn
       class="PrinterButton"
       outlined
@@ -16,6 +17,18 @@
         {{ $t('print') }}
       </span>
     </v-btn>
+=======
+    <div class="PrinterButton">
+      <v-btn outlined color="#00364c97a040" href="/print/flow" target="_blank">
+        <div class="PrinterButton-PrinterIcon">
+          <PrinterIcon />
+        </div>
+        <span class="PrinterButton-Text">
+          {{ $t('print') }}
+        </span>
+      </v-btn>
+    </div>
+>>>>>>> f74b1c1624cf67178e8153bb3ffbc2fd6d34cb5e
   </div>
 </template>
 

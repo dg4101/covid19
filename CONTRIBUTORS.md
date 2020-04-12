@@ -1,8 +1,9 @@
-Tokyo Covid-19 response site contributors
+Osaka Covid-19 response site contributors
 ============================================
 
 本サイトにご協力いただいた皆様
 
+<<<<<<< HEAD
 | Name (link) | GitHub | Twitter | Contribution |
 | --- | --- | --- | --- |
 | Hal Seki (Code for Japan) | [@halsk](https://github.com/halsk) | | Project facilitation |
@@ -140,11 +141,19 @@ Tokyo Covid-19 response site contributors
 | Hidehiro Nagaoka | [@hidehiro98](https://github.com/hidehiro98) | [@hid9hiro](https://twitter.com/hid9hiro) | Coding, Translation |
 | y171 | [@totoro721](https://github.com/totoro721) | | Coding, Translation |
 | [hogesuke](https://hogesuke.hateblo.jp/) | [@hogesuke](https://github.com/hogesuke) | [@hogesuke_1](https://twitter.com/hogesuke_1) | Coding |
+=======
+| Name(link) | Contribution |
+| --- | --- |
+| [teppei6969(Code for OSAKA)](https://github.com/teppei696) | Project facilitation |
+>>>>>>> f74b1c1624cf67178e8153bb3ffbc2fd6d34cb5e
 
-ご協力に感謝です！！！
+ご協力に感謝します！
 
+<<<<<<< HEAD
 お名前の掲載をご希望の方は，[#654](https://github.com/tokyo-metropolitan-gov/covid19/issues/654)にコメントをお願いします。
 
 If you want to add your name, please comment on [#654](https://github.com/tokyo-metropolitan-gov/covid19/issues/654).
 
 ![nyan](https://i.gyazo.com/f04e7468ea6e4bb6e87f6817fea980f9.gif)
+=======
+>>>>>>> f74b1c1624cf67178e8153bb3ffbc2fd6d34cb5e

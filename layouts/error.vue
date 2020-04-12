@@ -14,7 +14,11 @@
       </p>
       <div class="Error-ButtonContainer">
         <NuxtLink :to="localePath('/')" class="Error-Button">
+<<<<<<< HEAD
           {{ $t('トップページへ戻る') }}
+=======
+          トップページへ戻る
+>>>>>>> f74b1c1624cf67178e8153bb3ffbc2fd6d34cb5e
         </NuxtLink>
       </div>
     </div>

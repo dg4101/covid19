@@ -1,5 +1,27 @@
 <template>
+<<<<<<< HEAD
   <ul :class="$style.container">
+=======
+  <ul
+    :class="$style.container"
+    :aria-label="
+      ariaLabel(検査実施人数, 陽性物数, 入院中, 軽症中等症, 重症, 死亡, 退院)
+    "
+  >
+    <li :class="[$style.box, $style.boxTesting]">
+      <div :class="[$style.pillar, $style.pillarTesting]">
+        <div :class="$style.content">
+          <!-- eslint-disable vue/no-v-html-->
+          <span v-html="$t('検査実施<br />件数')" />
+          <!-- eslint-enable vue/no-v-html-->
+          <span>
+            <strong>{{ 検査実施人数 }}</strong>
+            <span :class="$style.unit">{{ $t('件.tested') }}</span>
+          </span>
+        </div>
+      </div>
+    </li>
+>>>>>>> f74b1c1624cf67178e8153bb3ffbc2fd6d34cb5e
     <li :class="[$style.box, $style.tall, $style.parent, $style.confirmed]">
       <div :class="$style.pillar">
         <div :class="$style.content">
@@ -8,7 +30,11 @@
             <br />({{ $t('累計') }})
           </span>
           <span>
+<<<<<<< HEAD
             <strong>{{ 陽性者数 }}</strong>
+=======
+            <strong>{{ 陽性物数 }}</strong>
+>>>>>>> f74b1c1624cf67178e8153bb3ffbc2fd6d34cb5e
             <span :class="$style.unit">{{ $t('人') }}</span>
           </span>
         </div>
@@ -17,7 +43,13 @@
         <li :class="[$style.box, $style.parent, $style.hospitalized]">
           <div :class="$style.pillar">
             <div :class="$style.content">
+<<<<<<< HEAD
               <span>{{ $t('入院中') }}</span>
+=======
+              <!-- eslint-disable vue/no-v-html-->
+              <span v-html="$t('入院・<br />入院調整中')" />
+              <!-- eslint-enable vue/no-v-html-->
+>>>>>>> f74b1c1624cf67178e8153bb3ffbc2fd6d34cb5e
               <span>
                 <strong>{{ 入院中 }}</strong>
                 <span :class="$style.unit">{{ $t('人') }}</span>
@@ -29,7 +61,11 @@
               <div :class="$style.pillar">
                 <div :class="$style.content">
                   <!-- eslint-disable vue/no-v-html-->
+<<<<<<< HEAD
                   <span v-html="$t('軽症・<br />中等症')" />
+=======
+                  <span v-html="$t('軽症・<br />無症状')" />
+>>>>>>> f74b1c1624cf67178e8153bb3ffbc2fd6d34cb5e
                   <!-- eslint-enable vue/no-v-html-->
                   <span>
                     <strong>{{ 軽症中等症 }}</strong>
@@ -65,7 +101,13 @@
         <li :class="[$style.box, $style.recovered]">
           <div :class="$style.pillar">
             <div :class="$style.content">
+<<<<<<< HEAD
               <span>{{ $t('退院') }}</span>
+=======
+              <!-- eslint-disable vue/no-v-html-->
+              <span v-html="$t('陰性確認済<br />（退院者累計）')" />
+              <!-- eslint-enable vue/no-v-html-->
+>>>>>>> f74b1c1624cf67178e8153bb3ffbc2fd6d34cb5e
               <span>
                 <strong>{{ 退院 }}</strong>
                 <span :class="$style.unit">{{ $t('人') }}</span>
@@ -78,17 +120,27 @@
   </ul>
 </template>
 
+<<<<<<< HEAD
 <script lang="ts">
 import Vue from 'vue'
 
 /* eslint-disable vue/prop-name-casing */
 export default Vue.extend({
+=======
+<script>
+/* eslint-disable vue/prop-name-casing */
+export default {
+>>>>>>> f74b1c1624cf67178e8153bb3ffbc2fd6d34cb5e
   props: {
     検査実施人数: {
       type: Number,
       required: true
     },
+<<<<<<< HEAD
     陽性者数: {
+=======
+    陽性物数: {
+>>>>>>> f74b1c1624cf67178e8153bb3ffbc2fd6d34cb5e
       type: Number,
       required: true
     },
@@ -134,6 +186,32 @@ export default Vue.extend({
           return 0
         }
       }
+<<<<<<< HEAD
+=======
+    },
+    /** グラフ内容がわかる支援技術用テキストの中身を取得する **/
+    ariaLabel(
+      inspected,
+      positive,
+      hospitalized,
+      mild,
+      critically,
+      deceased,
+      discharged
+    ) {
+      return this.$t(
+        '検査陽性者の状況: 検査実施人数は{inspected}人、うち累積の陽性者数は{positive}人です。入院中は{hospitalized}人で、うち軽症・中等症は{mild}人、また重症は{critically}人です。さらに死亡は{deceased}人、退院は{discharged}人です。',
+        {
+          inspected,
+          positive,
+          hospitalized,
+          mild,
+          critically,
+          deceased,
+          discharged
+        }
+      )
+>>>>>>> f74b1c1624cf67178e8153bb3ffbc2fd6d34cb5e
     }
   }
 })
@@ -277,6 +355,47 @@ $default-boxdiff: 35px;
     &:not(:last-child) {
       word-break: break-all;
     }
+<<<<<<< HEAD
+  }
+  span strong {
+    @include font-size(18);
+  }
+
+  span.unit {
+    @include font-size(16);
+  }
+}
+
+@function px2vw($px, $vw: 0) {
+  @if $vw > 0 {
+    @return ceil($px / $vw * 100000vw) / 1000;
+  } @else {
+    @return $px * 1px;
+  }
+}
+
+@mixin override($vw, $bdw, $fz, $boxh, $boxdiff) {
+  .pillar {
+    border-width: px2vw($bdw, $vw);
+  }
+
+  .group {
+    padding-top: px2vw($bdw, $vw);
+    border-top-width: px2vw($bdw, $vw);
+    border-left-width: px2vw($bdw, $vw);
+  }
+
+  .content {
+    > span {
+      @include font-size($fz);
+    }
+    span strong {
+      @include font-size($fz + 2);
+    }
+
+    span.unit {
+      @include font-size($fz);
+=======
   }
   span strong {
     @include font-size(18);
@@ -376,8 +495,111 @@ $default-boxdiff: 35px;
     &.recovered {
       margin-left: px2vw($bdw, $vw);
       width: calc(100% / 5 - #{px2vw($bdw, $vw)});
+>>>>>>> f74b1c1624cf67178e8153bb3ffbc2fd6d34cb5e
     }
   }
+
+  .box {
+    &.parent {
+      border-top-width: px2vw($bdw, $vw);
+      border-left-width: px2vw($bdw, $vw);
+      padding-top: px2vw($boxdiff, $vw) - px2vw($bdw, $vw) * 2;
+
+      &::after {
+        height: px2vw($boxdiff - $bdw, $vw);
+        border-left-width: px2vw($bdw, $vw);
+      }
+
+      > .pillar {
+        margin-top: px2vw((-($boxdiff - $bdw * 2)), $vw);
+      }
+    }
+
+    &.confirmed {
+      > .pillar {
+        width: calc(
+          (100% + #{px2vw($bdw, $vw)} * 2) / 6 - #{px2vw($bdw, $vw)} * 3
+        );
+      }
+
+      > .group {
+        width: calc(
+          (100% + #{px2vw($bdw, $vw)} * 2) / 6 * 5 + #{px2vw($bdw, $vw)}
+        );
+      }
+    }
+
+    &.hospitalized {
+      margin-left: px2vw($bdw, $vw);
+      width: calc(100% / 5 * 3 - #{px2vw($bdw, $vw)});
+
+      > .pillar {
+        width: calc(
+          (100% + #{px2vw($bdw, $vw)} * 2) / 3 - #{px2vw($bdw, $vw)} * 3
+        );
+      }
+
+      > .group {
+        width: calc(
+          (100% + #{px2vw($bdw, $vw)} * 2) / 3 * 2 + #{px2vw($bdw, $vw)}
+        );
+      }
+    }
+
+    &.minor,
+    &.severe {
+      margin-left: px2vw($bdw, $vw);
+      width: calc(100% / 2 - #{px2vw($bdw, $vw)});
+    }
+
+    &.deceased,
+    &.recovered {
+      margin-left: px2vw($bdw, $vw);
+      width: calc(100% / 5 - #{px2vw($bdw, $vw)});
+    }
+  }
+}
+
+// variables.scss Breakpoints: huge (1440)
+@include lessThan(1440) {
+  @include override(1440, 3, 15, 150, 35);
+}
+
+// Vuetify Breakpoints: Large (1264)
+@include lessThan(1263) {
+  @include override(1263, 2, 13, 107, 24);
+}
+
+// variables.scss Breakpoints: large (1170)
+@include lessThan(1170) {
+  @include override(1170, 2, 13, 107, 24);
+}
+
+// Vuetify Breakpoints: Small (960)
+@include lessThan(959) {
+  @include override(960, 4, 14, 180, 40);
+}
+
+@include lessThan(767) {
+  @include override(960, 3, 14, 180, 40);
+}
+
+// Vuetify Breakpoints: Extra Small (600)
+@include lessThan(600) {
+  @include override(600, 3, 14, 150, 35);
+}
+
+@include lessThan(420) {
+  @include override(600, 2, 12, 150, 35);
+}
+
+.boxTesting {
+  margin-right: $default-bdw;
+}
+
+.pillarTesting {
+  border-color: #333;
+  color: #4d4d4d;
 }
 
 // variables.scss Breakpoints: huge (1440)
