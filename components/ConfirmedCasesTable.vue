@@ -1,5 +1,23 @@
 <template>
-  <ul :class="$style.container">
+  <ul
+    :class="$style.container"
+    :aria-label="
+      ariaLabel(検査実施人数, 陽性物数, 入院中, 軽症中等症, 重症, 死亡, 退院)
+    "
+  >
+    <li :class="[$style.box, $style.boxTesting]">
+      <div :class="[$style.pillar, $style.pillarTesting]">
+        <div :class="$style.content">
+          <!-- eslint-disable vue/no-v-html-->
+          <span v-html="$t('検査実施<br />件数')" />
+          <!-- eslint-enable vue/no-v-html-->
+          <span>
+            <strong>{{ 検査実施人数 }}</strong>
+            <span :class="$style.unit">{{ $t('件.tested') }}</span>
+          </span>
+        </div>
+      </div>
+    </li>
     <li :class="[$style.box, $style.tall, $style.parent, $style.confirmed]">
       <div :class="$style.pillar">
         <div :class="$style.content">
@@ -8,7 +26,7 @@
             <br />({{ $t('累計') }})
           </span>
           <span>
-            <strong>{{ 陽性者数 }}</strong>
+            <strong>{{ 陽性物数 }}</strong>
             <span :class="$style.unit">{{ $t('人') }}</span>
           </span>
         </div>
@@ -17,7 +35,9 @@
         <li :class="[$style.box, $style.parent, $style.hospitalized]">
           <div :class="$style.pillar">
             <div :class="$style.content">
-              <span>{{ $t('入院中') }}</span>
+              <!-- eslint-disable vue/no-v-html-->
+              <span v-html="$t('入院・<br />入院調整中')" />
+              <!-- eslint-enable vue/no-v-html-->
               <span>
                 <strong>{{ 入院中 }}</strong>
                 <span :class="$style.unit">{{ $t('人') }}</span>
@@ -29,7 +49,7 @@
               <div :class="$style.pillar">
                 <div :class="$style.content">
                   <!-- eslint-disable vue/no-v-html-->
-                  <span v-html="$t('軽症・<br />中等症')" />
+                  <span v-html="$t('軽症・<br />無症状')" />
                   <!-- eslint-enable vue/no-v-html-->
                   <span>
                     <strong>{{ 軽症中等症 }}</strong>
@@ -65,7 +85,9 @@
         <li :class="[$style.box, $style.recovered]">
           <div :class="$style.pillar">
             <div :class="$style.content">
-              <span>{{ $t('退院') }}</span>
+              <!-- eslint-disable vue/no-v-html-->
+              <span v-html="$t('陰性確認済<br />（退院者累計）')" />
+              <!-- eslint-enable vue/no-v-html-->
               <span>
                 <strong>{{ 退院 }}</strong>
                 <span :class="$style.unit">{{ $t('人') }}</span>
@@ -78,17 +100,15 @@
   </ul>
 </template>
 
-<script lang="ts">
-import Vue from 'vue'
-
+<script>
 /* eslint-disable vue/prop-name-casing */
-export default Vue.extend({
+export default {
   props: {
     検査実施人数: {
       type: Number,
       required: true
     },
-    陽性者数: {
+    陽性物数: {
       type: Number,
       required: true
     },
@@ -115,7 +135,7 @@ export default Vue.extend({
   },
   methods: {
     /** 桁数に応じて位置の調整をする */
-    getAdjustX(input: number) {
+    getAdjustX(input) {
       const length = input.toString(10).length
       switch (length) {
         case 1: {
@@ -134,9 +154,32 @@ export default Vue.extend({
           return 0
         }
       }
+    },
+    /** グラフ内容がわかる支援技術用テキストの中身を取得する **/
+    ariaLabel(
+      inspected,
+      positive,
+      hospitalized,
+      mild,
+      critically,
+      deceased,
+      discharged
+    ) {
+      return this.$t(
+        '検査陽性者の状況: 検査実施人数は{inspected}人、うち累積の陽性者数は{positive}人です。入院中は{hospitalized}人で、うち軽症・中等症は{mild}人、また重症は{critically}人です。さらに死亡は{deceased}人、退院は{discharged}人です。',
+        {
+          inspected,
+          positive,
+          hospitalized,
+          mild,
+          critically,
+          deceased,
+          discharged
+        }
+      )
     }
   }
-})
+}
 </script>
 
 <style lang="scss" module>
@@ -378,6 +421,15 @@ $default-boxdiff: 35px;
       width: calc(100% / 5 - #{px2vw($bdw, $vw)});
     }
   }
+}
+
+.boxTesting {
+  margin-right: $default-bdw;
+}
+
+.pillarTesting {
+  border-color: #333;
+  color: #4d4d4d;
 }
 
 // variables.scss Breakpoints: huge (1440)

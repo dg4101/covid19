@@ -1,45 +1,65 @@
 <template>
-  <div class="header">
+  <div class="header mb-3">
     <h2 class="pageTitle">
-      <v-icon v-if="icon" size="40" class="mr-2">
+      <v-icon size="40" class="mr-2">
         {{ icon }}
       </v-icon>
-      <slot />
+      {{ title }}
     </h2>
+    <div class="date">
+      <span>{{ $t('最終更新') }} </span>
+      <time :datetime="formattedDate">{{ formattedDate }}</time>
+    </div>
   </div>
 </template>
 
-<script lang="ts">
-import Vue from 'vue'
+<script>
+import { convertDateToFormat } from '@/utils/formatDate'
 
-export default Vue.extend({
+export default {
   props: {
+    title: {
+      type: String,
+      required: true,
+      default: ''
+    },
     icon: {
-      type: String
+      type: String,
+      required: false,
+      default: ''
+    },
+    date: {
+      type: String,
+      required: false,
+      default: ''
     }
+  },
+  data() {
+    const formattedDate = convertDateToFormat(this.date)
+    return { formattedDate }
   }
-})
+}
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .header {
   display: flex;
   align-items: flex-end;
   flex-wrap: wrap;
 }
-
 .pageTitle {
-  @include font-size(30);
-
-  color: $gray-2;
   display: flex;
   align-items: center;
-  line-height: 1.35;
+  font-size: 1.875rem;
+  line-height: 1;
   font-weight: normal;
   margin: 0 0.5em 0 0;
-
   @include lessThan($small) {
-    @include font-size(20);
+    font-size: 1.25rem;
   }
+}
+.date {
+  font-size: 0.875rem;
+  color: $gray-3;
 }
 </style>
