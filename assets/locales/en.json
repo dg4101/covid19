@@ -1,9 +1,14 @@
 {
   "新型コロナウイルス感染症が心配なときに": "If you feel concerned about COVID-19",
+<<<<<<< HEAD
   "かかりつけ医に相談することもできます。": "You can also consult with your doctor.",
   "詳しくはこちらをご参照ください。": "For more information, please refer this:",
   "詳細を見る（東京都福祉保健局）": "For details: Bureau of Social Welfare and Public Health website",
   "都内の最新感染動向": "Latest updates on COVID-19 in Tokyo",
+=======
+  "詳細を見る（東京都福祉保健局）": "For details: Bureau of Social Welfare and Public Health website",
+  "府内の最新感染動向": "Latest updates on COVID-19 in Osaka",
+>>>>>>> f74b1c1624cf67178e8153bb3ffbc2fd6d34cb5e
   "自分や家族の症状に不安や心配があればまずは電話相談をどうぞ": "Consult over the phone if you have any concerns",
   "相談の手順を見る": "Consultation flowchart",
   "検査陽性者の状況": "Details of people testing positive",
@@ -14,7 +19,11 @@
   "新型コロナ受診相談窓口相談件数": "Number of calls to the Novel Coronavirus Hotline",
   "都営地下鉄の利用者数の推移": "Estimated number of Toei subway passengers",
   "都庁来庁者数の推移": "Number of visitors to the Tokyo Metropolitan Government buildings",
+<<<<<<< HEAD
   "都内発生（※1）": "Found in Tokyo (*1)",
+=======
+  "都内発生（※1）": "Founds in Tokyo (*1)",
+>>>>>>> f74b1c1624cf67178e8153bb3ffbc2fd6d34cb5e
   "※1: 疑い例・接触者調査": "*1 Confirmed through testing of suspected cases or those in close contact with them.",
   "その他（※2）": "Others (*2)",
   "※2: チャーター便・クルーズ船": "*2: Charter flights and cruise ship",
@@ -46,9 +55,15 @@
   "臨時休校中の新型コロナウイルス感染症対応についてのお願い": "How to deal with COVID-19 during emergency school closure",
   "感染予防・健康管理": "Infection prevention and health management",
   "不特定多数の人の集まる場所等への外出を避け、基本的に自宅で過ごしてください。": "Have your children basically stay at home and avoid going to crowded areas.",
+<<<<<<< HEAD
   "手洗い、咳エチケット等により、感染予防に努めてください。": "Please make sure that everyone in your family washes hands regularly and practice cough etiquette.",
   "【参考】感染症予防のための正しい手洗い方法（動画）": "[Video] How to wash your hands properly to prevent infection",
   "規則正しい生活を心がけ、日常の健康管理に十分気を付けてください。": "Try to live a regular life and monitor the health of your children daily. ",
+=======
+  "手洗い、咳エチケット等により、感染予防に努めてください。": "Strive to prevent infection by having everyone wash their hands regularly and practice cough etiquette.",
+  "【参考】感染症予防のための正しい手洗い方法（動画）": "[Video] How to wash your hands properly to prevent infection",
+  "規則正しい生活を心がけ、日常の健康管理に十分気を付けてください。": "Keep to regular routines as much as possible and monitor the health of your children. ",
+>>>>>>> f74b1c1624cf67178e8153bb3ffbc2fd6d34cb5e
   "感染症を疑う場合の対応": "If you think your child is infected",
   "各保健所にご相談ください": "If your child has cold-like symptoms, a fever of 37.5 degrees or higher for at least four days, extreme fatigue, or diffficulty breathing, call your public health center.",
   "各保健所の電話番号について": "See the web page: Consultation Desks for COVID-19  (Tokyo Metropolitan Government Bureau of Social Welfare and Public Health)",
@@ -135,7 +150,11 @@
   "第二庁舎計": "No. 2 Bldg. total",
   "議事堂計": "Metropolitan Assembly Bldg. total",
   "※土・日・祝日を除く庁舎開庁日の1週間累計数": "* Weekly number of visitors on days the building was open to the public, excluding Sat., Sun., and holidays.",
+<<<<<<< HEAD
   "陽性者数": "Total number of people testing positive",
+=======
+  "陽性者数": "Number of people tested positive",
+>>>>>>> f74b1c1624cf67178e8153bb3ffbc2fd6d34cb5e
   "(累計)": "(Total)",
   "入院中": "Hospitalized",
   "軽症・<br />中等症": "Mild to moderate symptoms",
@@ -155,7 +174,11 @@
   "新型コロナウイルス感染症": " COVID-19",
   "menu/新型コロナウイルス感染症": "Tokyo COVID-19 Information",
   "対策サイト": " Task Force website",
+<<<<<<< HEAD
   "menu/対策サイト": "　",
+=======
+  "menu/対策サイト": "Health care center in Osaka Prefectura jurisdiction",
+>>>>>>> f74b1c1624cf67178e8153bb3ffbc2fd6d34cb5e
   "最終更新": "Last update",
   "注釈": " This is a provisional translation. Please be aware that there may be mistranslations.",
   "print": " Print",
@@ -166,7 +189,11 @@
   "東京都新型コロナウイルス感染症対策本部報": "Tokyo Novel Coronavirus Response Headquarters announcements",
   "東京都主催等 中止又は延期するイベント等": "Cancellation or postponement of events held by the Tokyo Government (Japanese)",
   "東京都公式ホームページ": "Official website of the Tokyo Metropolitan Government",
+<<<<<<< HEAD
   "知事からのメッセージ": "Message from Governor Koike on COVID-19",
+=======
+  "知事からのメッセージ": "Message from Governor YOSHIMURA on COVID-19",
+>>>>>>> f74b1c1624cf67178e8153bb3ffbc2fd6d34cb5e
   "多言語対応選択メニュー": "Select language",
   "このサイトの内容物は": " Content on This Site is Licensed Under a",
   "クリエイティブ・コモンズ 表示 4.0 ライセンス": " Creative Commons Attribution 4.0 International License",
@@ -180,7 +207,11 @@
   "（注）同一の対象者について複数の検体を検査する場合あり": "(Note) More than one sample from the same subject may be tested.",
   "合計": " Total",
   "{date}の全体累計": " Cumulative total as of %{date}",
+<<<<<<< HEAD
   "{date}の合計": " Total of %{date}",
+=======
+  "{date} の合計": " Total of %{date}",
+>>>>>>> f74b1c1624cf67178e8153bb3ffbc2fd6d34cb5e
   "最新のお知らせ": "What's new",
   "都の備蓄マスク20万枚を都内全区市町村へ提供": " Tokyo Metropolitan Government provides the stockpile of masks for all the wards: and the municipalities in Tokyo (in Japanese)",
   "都内医療機関及び保健所等へのマスクの配布について": "Regarding the distribution of masks to medical institutions: public health centers: etc.: in Tokyo",
@@ -301,12 +332,21 @@
   "（注）チャーター機帰国者、クルーズ船乗客等は含まれていない": "(Note) Excluding the returnees on charter flights or the cruise ship passengers",
   "（注）速報値として公開するものであり、後日確定データとして修正される場合あり": "(Note) The number is published as preliminary figures and may be revised as confirmed data at a later date ",
   "都外": "Outside Tokyo",
+<<<<<<< HEAD
   "新宿区エリアの来訪者推移（参考値）": "Number of visitors to the Shinjuku-ku area (for reference)",
   "千代田区エリアの来訪者推移（参考値）": "Number of visitors to the Chiyoda-ku area (for reference)",
   "2月3日～2月7日の来訪者数 (※1) の平均値 (※2) を 基準としたときの相対値": "Relative to the average number (*2) of visitors (*1) from February 3 to February 7",
   "※1) ヤフーに蓄積された位置情報データなどを元に算出した参考値": "*1 Figures derived from location information data compiled by Yahoo",
   "※2) 土・日・祝日を除く7:30~8:30の1週間平均値": "*2 Weekly average of visitors from 7:30 to 8:30, excluding Sat., Sun., and holidays",
   "※本データは2020年3月31日までの掲載となります": "* This data is only available up to March 31, 2020",
+=======
+  "新宿区エリアの来訪者推移（参考値）": "Number of visitors to Shinjuku-ku Area (for reference)",
+  "千代田区エリアの来訪者推移（参考値）": "Number of visitors to Chiyoda-ku Area (for reference)",
+  "2月3日～2月7日の来訪者数 (※1) の平均値 (※2) を 基準としたときの相対値": "Relative value based on the average (*2) of the number of visitors (*1) from February 3 to February 7",
+  "※1) ヤフーに蓄積された位置情報データなどを元に算出した参考値": "*1 Reference value calculated by using location data stored in Yahoo",
+  "※2) 土・日・祝日を除く7:30~8:30の1週間平均値": "*2 Average value from 7:30 to 8:30 during business days of the week which exclude Saturdays, Sundays and holidays",
+  "※本データは2020年3月31日までの掲載となります": " *  This data is only available until March 31, 2020 and not after.",
+>>>>>>> f74b1c1624cf67178e8153bb3ffbc2fd6d34cb5e
   "出典: {source}": "Source: {source}",
   "ヤフー・データソリューション": "Yahoo DATA SOLUTION",
   "新型コロナウイルスに関する休暇や休業の取り扱い、職場のハラスメント、内定取り消しなどについての相談": "Consultation on issues related to COVID-19 such as handling of paid leave, business suspension, workplace harassment, or withdrawn employment offer",
@@ -320,6 +360,7 @@
   "LINEで{title}のグラフをシェア": "Share the graph of {title} with LINE",
   "Twitterで{title}のグラフをシェア": "Share the graph of {title} with Twitter",
   "facebookで{title}のグラフをシェア": "Share the graph of {title} with Facebook",
+<<<<<<< HEAD
   "日付": "Date",
   "不明": "unknown",
   "調査中": "Investigating",
@@ -330,4 +371,80 @@
   "※ 土・日・祝日を除く7:30~8:30の平均値": "Weekly average from 7:30-8:30, excluding Sat., Sun., and holidays",
   "東京23区の人口推移（参考値）": "Change in population for Tokyo 23 Wards (for reference)",
   "※7:30〜8:30の平均値": "Weekly average from 7:30-8:30"
+=======
+  "大阪府の最新感染動向": "Latest updates on COVID-19 in Osaka",
+  "陽性者の属性": "Details of patients testing positive",
+  "陰性確認済（退院者累計）": "Negative Confirmed (Total Number of Discharged Patients)",
+  "（注）退院者とは新型コロナウイルス感染症が治癒した者": "（Note)“The discharged patients” means the people who have recovered from the COVID-19.",
+  "新型コロナ受診相談センターへの相談件数": "Number of calls to Novel Coronavirus-related Consultation Centers",
+  "府民向け相談窓口への相談件数": "Number of calls to the Consultation desk for residents",
+  "{date} 時点": "As of {date}",
+  "※退院とは新型コロナウイルス感染症が治癒した者": "*“Discharge” means the people who have recovered from the COVID-19.",
+  "※退院には死亡退院を含む": "*The discharged includes deaths　",
+  "○": "○",
+  "府管轄保健所": "Public health centers under the jurisdiction of Osaka Prefecture ",
+  "政令中核市保健所": "Public health centers in core and designated cities",
+  "日付": "Date",
+  "未就学児": "Pre-school child",
+  "大阪府大阪市": "Osaka City",
+  "大阪府堺市": "Sakai City",
+  "大阪府能勢町": "Nose Town",
+  "大阪府豊能町": "Toyono Town",
+  "大阪府池田市": "Ikeda City",
+  "大阪府箕面市": "Minoh City ",
+  "大阪府豊中市": "Toyonaka City",
+  "大阪府茨木市": "Ibaraki City",
+  "大阪府高槻市": "Takatsuki City",
+  "大阪府島本町": "Shimamoto Town",
+  "大阪府吹田市": "Suita City",
+  "大阪府摂津市": "Settsu City",
+  "大阪府枚方市": "Hirakata City",
+  "大阪府交野市": "Katano City",
+  "大阪府寝屋川市": "Neyagawa City",
+  "大阪府守口市": "Moriguchi City",
+  "大阪府門真市": "Kadoma City",
+  "大阪府四條畷市": "Shijonawate City",
+  "大阪府大東市": "Daito City",
+  "大阪府東大阪市": "Higashiosaka City",
+  "大阪府八尾市": "Yao City ",
+  "大阪府柏原市": "Kashiwara City",
+  "大阪府和泉市": "Izumi City",
+  "大阪府高石市": "Takaishi City",
+  "大阪府泉大津市": "Izumiotsu City ",
+  "大阪府忠岡町": "Tadaoka Town",
+  "大阪府岸和田市": "Kishiwada City",
+  "大阪府貝塚市": "Kaizuka City",
+  "大阪府熊取町": "Kumatori Town",
+  "大阪府泉佐野市": "Izumisano City",
+  "大阪府田尻町": "Tajiri Town",
+  "大阪府泉南市": "Sennan City",
+  "大阪府阪南市": "Hannan City",
+  "大阪府岬町": "Misaki Town",
+  "大阪府松原市": "Matsubara City",
+  "大阪府羽曳野市": "Habikino City",
+  "大阪府藤井寺市": "Fujiidera City",
+  "大阪府太子町": "Taishi Town",
+  "大阪府河南町": "Kanan Town",
+  "大阪府千早赤阪村": "Chihaya-akasaka Village",
+  "大阪府富田林市": "Tondabayashi City",
+  "大阪府大阪狭山市": "Osakasayama City",
+  "大阪府河内長野市": "Kawachinagano City",
+  "大阪府外": " Outside Osaka",
+  "{month}月{date}日": "{month}/{date}",
+  "検査実施<br />件数": "Number<br />of tests conducted",
+  "入院・<br />入院調整中": "Hospitalized/<br />Need to be hospitalized",
+  "軽症・<br />無症状": "Mild symptoms/<br />Asymptomatic",
+  "陰性確認済<br />（退院者累計）": "Negative Confirmed<br />（Total Number of Discharged Patients ）",
+  "検査陽性者の状況: 検査実施人数は{inspected}人、うち累積の陽性者数は{positive}人です。入院中は{hospitalized}人で、うち軽症・中等症は{mild}人、また重症は{critically}人です。さらに死亡は{deceased}人、退院は{discharged}人です。": "Details of people testing positive: The number of people tested:{inspected}, Total of people tested:{positive}, Hospitalized:{hospitalized}, Mild to moderate symptoms:{mild}, Severe symptoms:{critically}, Deaths:{deceased}, Discharged:{discharged}.",
+  "大阪府": "Osaka Prefecture ",
+  "新型コロナウイルス感染症について": "About Novel Coronavirus Disease (COVID-19)",
+  "新型コロナウイルス感染症関連情報": "Information related to Novel Coronavirus",
+  "大阪府新型コロナウイルス対策本部": "Osaka Novel Coronavirus-control Headquarters ",
+  "大阪府公式ホームページ": " Osaka Prefectural Government Official Website",
+  "大阪府公式Twitter": "Official Twitter of Osaka Prefectural Government (Japanese Only)",
+  "大阪府公式Facebook": "Official Facebook of Osaka Prefectural Government (Japanese Only)",
+  "大阪府公式LINE": "Official LINE of Osaka Prefectural Government (Japanese Only)",
+  "おおさか防災ネットTwitter": "Twitter of Osaka Disaster Prevention Network (Japanese Only)",
+  "項番": "S/N"
+>>>>>>> f74b1c1624cf67178e8153bb3ffbc2fd6d34cb5e
 }

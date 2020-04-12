@@ -1,5 +1,6 @@
 <template>
   <v-app class="app">
+<<<<<<< HEAD
     <v-overlay v-if="loading" color="#F8F9FA" opacity="1" z-index="9999">
       <div class="loader">
         <img src="/logo.svg" alt="東京都" />
@@ -7,6 +8,13 @@
       </div>
     </v-overlay>
     <div v-if="hasNavigation" class="appContainer">
+=======
+    <div v-if="loading" class="loader">
+      <img src="/logo.png" alt="大阪府" />
+      <scale-loader color="#364c97" />
+    </div>
+    <div v-else class="appContainer">
+>>>>>>> f74b1c1624cf67178e8153bb3ffbc2fd6d34cb5e
       <div class="naviContainer">
         <SideNavigation
           :is-navi-open="isOpenNavigation"
@@ -87,6 +95,7 @@ export default Vue.extend({
       link: [
         {
           rel: 'canonical',
+<<<<<<< HEAD
           href: `https://stopcovid19.metro.tokyo.lg.jp${this.$route.path}`
         },
         {
@@ -163,6 +172,9 @@ export default Vue.extend({
           hid: 'twitter:image',
           name: 'twitter:image',
           content: this.$tc('ogp.og:image')
+=======
+          href: `https://covid19-osaka.info${this.$route.path}`
+>>>>>>> f74b1c1624cf67178e8153bb3ffbc2fd6d34cb5e
         }
       ]
     }

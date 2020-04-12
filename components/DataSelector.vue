@@ -6,6 +6,7 @@
     mandatory
     @change="$emit('input', $event)"
   >
+<<<<<<< HEAD
     <v-btn
       v-ripple="false"
       :aria-pressed="value === 'transition' ? 'true' : 'false'"
@@ -20,6 +21,12 @@
       value="cumulative"
       class="DataSelector-Button"
     >
+=======
+    <v-btn v-ripple="false" value="transition" class="DataSelector-Button">
+      {{ $t('日別') }}
+    </v-btn>
+    <v-btn v-ripple="false" value="cumulative" class="DataSelector-Button">
+>>>>>>> f74b1c1624cf67178e8153bb3ffbc2fd6d34cb5e
       {{ $t('累計') }}
     </v-btn>
   </v-btn-toggle>

@@ -5,7 +5,11 @@
         mdi-information
       </v-icon>
       {{ $t('最新のお知らせ') }}
+<<<<<<< HEAD
     </h3>
+=======
+    </h2>
+>>>>>>> f74b1c1624cf67178e8153bb3ffbc2fd6d34cb5e
     <ul class="WhatsNew-list">
       <li v-for="(item, i) in items" :key="i" class="WhatsNew-list-item">
         <a

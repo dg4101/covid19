@@ -216,8 +216,37 @@ import PageHeader from '@/components/PageHeader.vue'
 
 export default Vue.extend({
   components: {
+<<<<<<< HEAD
     PageHeader,
     StaticCard
+=======
+    TextCard
+  },
+  data() {
+    return {
+      items: [
+        {
+          title: '新型コロナウイルス感染症への対応のための融資メニュー',
+          link: 'http://www.pref.osaka.lg.jp/kinyushien/korona/index.html',
+          body:
+            '新型コロナウイルス感染症の発生により経営に影響を受けている中小企業のみなさまを支援するための融資制度がございますので、ご活用ください。'
+        },
+        {
+          title: '事業継続緊急対策（テレワーク）助成金',
+          link:
+            'https://www.shigotozaidan.or.jp/koyo-kankyo/joseikin/kinkyutaisaku.html',
+          body:
+            '府内中堅・中小企業に対し、テレワークの導入に必要な機器やソフトウェア等の経費を助成します（限度額250万円、助成率10/10）。ぜひご活用ください。'
+        },
+        {
+          title: '中小企業者等特別相談窓口',
+          link: 'http://www.pref.osaka.lg.jp/keieishien/corona/index.html',
+          body:
+            '資金繰りに関する相談、経営に関する相談（大阪府産業労働局　報道発表）'
+        }
+      ]
+    }
+>>>>>>> f74b1c1624cf67178e8153bb3ffbc2fd6d34cb5e
   },
   head(): MetaInfo {
     return {

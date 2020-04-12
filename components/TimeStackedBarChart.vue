@@ -1,6 +1,7 @@
 <template>
   <data-view :title="title" :title-id="titleId" :date="date">
     <template v-slot:button>
+<<<<<<< HEAD
       <ul :class="$style.GraphDesc">
         <li>
           {{ $t('（注）医療機関が保険適用で行った検査は含まれていない') }}
@@ -21,6 +22,9 @@
         :target-id="chartId"
         :style="{ display: canvas ? 'inline-block' : 'none' }"
       />
+=======
+      <data-selector v-model="dataKind" />
+>>>>>>> f74b1c1624cf67178e8153bb3ffbc2fd6d34cb5e
     </template>
     <h4 :id="`${titleId}-graph`" class="visually-hidden">
       {{ $t(`{title}のグラフ`, { title }) }}
@@ -198,7 +202,11 @@ const options: ThisTypedComponentOptionsWithRecordProps<
       if (this.dataKind === 'transition') {
         return {
           lText: this.sum(this.pickLastNumber(this.chartData)).toLocaleString(),
+<<<<<<< HEAD
           sText: `${this.$t('{date}の合計', {
+=======
+          sText: `${this.$t('{date} の合計', {
+>>>>>>> f74b1c1624cf67178e8153bb3ffbc2fd6d34cb5e
             date: this.labels[this.labels.length - 1]
           })}`,
           unit: this.unit
@@ -206,18 +214,26 @@ const options: ThisTypedComponentOptionsWithRecordProps<
       }
       return {
         lText: this.sum(this.cumulativeSum(this.chartData)).toLocaleString(),
+<<<<<<< HEAD
         sText: `${this.$t('{date}の全体累計', {
+=======
+        sText: `${this.$t('{date} の全体累計', {
+>>>>>>> f74b1c1624cf67178e8153bb3ffbc2fd6d34cb5e
           date: this.labels[this.labels.length - 1]
         })}`,
         unit: this.unit
       }
     },
     displayData() {
+<<<<<<< HEAD
       const borderColor = '#ffffff'
       const borderWidth = [
         { left: 0, top: 1, right: 0, bottom: 0 },
         { left: 0, top: 0, right: 0, bottom: 0 }
       ]
+=======
+      const colorArray = ['#364c97', '#0076eb']
+>>>>>>> f74b1c1624cf67178e8153bb3ffbc2fd6d34cb5e
       if (this.dataKind === 'transition') {
         return {
           labels: this.labels,
@@ -277,6 +293,7 @@ const options: ThisTypedComponentOptionsWithRecordProps<
         tooltips: {
           displayColors: false,
           callbacks: {
+<<<<<<< HEAD
             label: (tooltipItem: any) => {
               let casesTotal, cases
               if (this.dataKind === 'transition') {
@@ -296,6 +313,24 @@ const options: ThisTypedComponentOptionsWithRecordProps<
               return `${
                 this.dataLabels[tooltipItem.datasetIndex]
               }: ${cases} ${unit} (${this.$t('合計')}: ${casesTotal} ${unit})`
+=======
+            label: tooltipItem => {
+              const labelText =
+                this.dataKind === 'transition'
+                  ? `${sumArray[tooltipItem.index]} ${unit}（${this.$t(
+                      '府管轄保健所'
+                    )}: ${data[0][tooltipItem.index]}/${this.$t(
+                      '政令中核市保健所'
+                    )}: ${data[1][tooltipItem.index]}）`
+                  : `${
+                      cumulativeSumArray[tooltipItem.index]
+                    } ${unit}（${this.$t('府管轄保健所')}: ${
+                      cumulativeData[0][tooltipItem.index]
+                    }/${this.$t('政令中核市保健所')}: ${
+                      cumulativeData[1][tooltipItem.index]
+                    }）`
+              return labelText
+>>>>>>> f74b1c1624cf67178e8153bb3ffbc2fd6d34cb5e
             },
             title(tooltipItem: any, data: any) {
               return data.labels[tooltipItem[0].index]

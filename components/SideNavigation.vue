@@ -2,6 +2,7 @@
   <div ref="Side" class="SideNavigation" tabindex="-1">
     <header class="SideNavigation-Header">
       <v-icon
+<<<<<<< HEAD
         class="SideNavigation-OpenIcon"
         :aria-label="$t('サイドメニュー項目を開く')"
         @click="$emit('openNavi', $event)"
@@ -29,10 +30,34 @@
         class="SideNavigation-CloseIcon"
         :aria-label="$t('サイドメニュー項目を閉じる')"
         @click="$emit('closeNavi', $event)"
+=======
+        class="SideNavigation-HeadingIcon pc-none"
+        :aria-label="$t('サイドメニュー項目を開く')"
+        @click="openNavi"
+      >
+        mdi-menu
+      </v-icon>
+      <nuxt-link :to="localePath('/')" class="SideNavigation-HeadingLink">
+        <div class="SideNavigation-Logo">
+          <img src="/logo.png" :alt="$t('大阪府')" />
+        </div>
+        <h1 class="SideNavigation-Heading">
+          {{ $t('新型コロナウイルス感染症') }}<br />{{ $t('対策サイト') }}
+        </h1>
+      </nuxt-link>
+    </div>
+
+    <div class="sp-none" :class="{ open: isNaviOpen }">
+      <v-icon
+        class="SideNavigation-ListContainerIcon pc-none"
+        :aria-label="$t('サイドメニュー項目を閉じる')"
+        @click="closeNavi"
+>>>>>>> f74b1c1624cf67178e8153bb3ffbc2fd6d34cb5e
       >
         mdi-close
       </v-icon>
 
+<<<<<<< HEAD
       <nav class="SideNavigation-Menu">
         <div class="SideNavigation-Language">
           <div
@@ -72,9 +97,40 @@
               <img src="/twitter.png" alt="Twitter" />
             </picture>
           </a>
+=======
+      <div class="SideNavigation-ListItemContainer">
+        <div
+          v-if="this.$i18n.locales.length > 1"
+          class="SideNavigation-Language"
+        >
+          <label class="SideNavigation-LanguageLabel" for="LanguageSelector">
+            {{ $t('多言語対応選択メニュー') }}
+          </label>
+          <LanguageSelector />
+        </div>
+      </div>
+
+      <v-divider class="SideNavigation-Divider" />
+
+      <v-list :flat="true">
+        <v-container
+          v-for="(item, i) in items"
+          :key="i"
+          class="SideNavigation-ListItemContainer"
+          @click="closeNavi"
+        >
+          <ListItem :link="item.link" :icon="item.icon" :title="item.title" />
+          <v-divider v-show="item.divider" class="SideNavigation-Divider" />
+        </v-container>
+      </v-list>
+      <div class="SideNavigation-Footer">
+        <small class="SideNavigation-Copyright" lang="en">
+          Content on This Site is Licensed Under a
+>>>>>>> f74b1c1624cf67178e8153bb3ffbc2fd6d34cb5e
           <a
-            href="https://www.facebook.com/tochokoho"
+            rel="license"
             target="_blank"
+<<<<<<< HEAD
             rel="noopener noreferrer"
             class="SideNavigation-SocialLink"
           >
@@ -108,12 +164,20 @@
           {{ $t('の下に提供されています。') }}
           <br />
           2020 Tokyo Metropolitan Government
+=======
+            href="http://creativecommons.org/licenses/by/4.0/"
+          >
+            Creative Commons Attribution 4.0 International License </a
+          ><br />
+          2020 Osaka Prefectural Government × CODE for OSAKA
+>>>>>>> f74b1c1624cf67178e8153bb3ffbc2fd6d34cb5e
         </small>
       </footer>
     </div>
   </div>
 </template>
 
+<<<<<<< HEAD
 <script lang="ts">
 import Vue from 'vue'
 import { TranslateResult } from 'vue-i18n'
@@ -126,11 +190,20 @@ type Item = {
   link: string
   divider?: boolean
 }
+=======
+<script>
+import ListItem from '@/components/ListItem'
+import LanguageSelector from '@/components/LanguageSelector.vue'
+>>>>>>> f74b1c1624cf67178e8153bb3ffbc2fd6d34cb5e
 
 export default Vue.extend({
   components: {
     LanguageSelector,
+<<<<<<< HEAD
     MenuList
+=======
+    ListItem
+>>>>>>> f74b1c1624cf67178e8153bb3ffbc2fd6d34cb5e
   },
   props: {
     isNaviOpen: {
@@ -143,6 +216,7 @@ export default Vue.extend({
       return [
         {
           icon: 'mdi-chart-timeline-variant',
+<<<<<<< HEAD
           title: this.$t('都内の最新感染動向'),
           link: this.localePath('/')
         },
@@ -170,10 +244,34 @@ export default Vue.extend({
         },
         {
           title: this.$t('東京都新型コロナウイルス感染症対策本部報'),
-          link:
-            'https://www.bousai.metro.tokyo.lg.jp/taisaku/saigai/1007261/index.html'
+=======
+          title: this.$t('府内の最新感染動向'),
+          link: this.localePath('/')
         },
         {
+          icon: 'covid',
+          title: this.$t('新型コロナウイルス感染症について'),
+          link: 'http://www.pref.osaka.lg.jp/iryo/osakakansensho/corona.html'
+        },
+        {
+          icon: 'mdi-domain',
+          title: this.$t('新型コロナウイルス感染症関連情報'),
+          link: 'http://www.pref.osaka.lg.jp/kikaku/covid19info/index.html'
+        },
+        {
+          icon: 'mdi-account-multiple',
+          title: this.$t('大阪府新型コロナウイルス対策本部'),
+          link: 'http://www.pref.osaka.lg.jp/iryo/2019ncov/index.html',
+          divider: true
+        },
+        {
+          title: this.$t('知事からのメッセージ'),
+>>>>>>> f74b1c1624cf67178e8153bb3ffbc2fd6d34cb5e
+          link:
+            'http://www.pref.osaka.lg.jp/iryo/osakakansensho/corona_message.html'
+        },
+        {
+<<<<<<< HEAD
           title: this.$t('東京都主催等 中止又は延期するイベント等'),
           link:
             'https://www.seisakukikaku.metro.tokyo.lg.jp/information/event00.html'
@@ -194,6 +292,32 @@ export default Vue.extend({
         {
           title: this.$t('東京都公式ホームページ'),
           link: 'https://www.metro.tokyo.lg.jp/'
+=======
+          title: this.$t('当サイトについて'),
+          link: this.localePath('/about')
+        },
+        {
+          title: this.$t('大阪府公式ホームページ'),
+          link: 'http://www.pref.osaka.lg.jp/',
+          divider: true
+        },
+        {
+          title: this.$t('大阪府公式Twitter'),
+          link: 'https://twitter.com/osakaprefPR/'
+        },
+        {
+          title: this.$t('大阪府公式Facebook'),
+          link: 'https://www.facebook.com/osaka.pref'
+        },
+        {
+          title: this.$t('大阪府公式LINE'),
+          link: 'https://lin.ee/8IJ5WMv'
+        },
+        {
+          title: this.$t('おおさか防災ネットTwitter'),
+          link: 'https://twitter.com/osaka_bousai',
+          divider: true
+>>>>>>> f74b1c1624cf67178e8153bb3ffbc2fd6d34cb5e
         }
       ]
     }
@@ -321,8 +445,24 @@ export default Vue.extend({
   }
 }
 
+<<<<<<< HEAD
 .SideNavigation-HeaderText {
   margin: 10px 0 0 0;
+=======
+.SideNavigation-Menu {
+  @include lessThan($small) {
+    padding-top: 50px;
+  }
+}
+
+.SideNavigation-LanguageLabel {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 0.85rem;
+}
+
+.open {
+>>>>>>> f74b1c1624cf67178e8153bb3ffbc2fd6d34cb5e
   @include lessThan($small) {
     margin: 0 0 0 10px;
   }

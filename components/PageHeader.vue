@@ -6,17 +6,36 @@
       </v-icon>
       <slot />
     </h2>
+<<<<<<< HEAD
   </div>
 </template>
 
 <script lang="ts">
 import Vue from 'vue'
+=======
+    <div class="date">
+      <span>{{ $t('最終更新') }} </span>
+      <time :datetime="formattedDate">{{ formattedDate }}</time>
+    </div>
+  </div>
+</template>
+
+<script>
+import { convertDateToFormat } from '@/utils/formatDate'
+>>>>>>> f74b1c1624cf67178e8153bb3ffbc2fd6d34cb5e
 
 export default Vue.extend({
   props: {
     icon: {
       type: String
     }
+<<<<<<< HEAD
+=======
+  },
+  data() {
+    const formattedDate = convertDateToFormat(this.date)
+    return { formattedDate }
+>>>>>>> f74b1c1624cf67178e8153bb3ffbc2fd6d34cb5e
   }
 })
 </script>

@@ -7,6 +7,7 @@
           :class="!!$slots.infoPanel ? 'with-infoPanel' : ''"
         >
           {{ title }}
+<<<<<<< HEAD
         </h3>
         <slot name="infoPanel" />
       </div>
@@ -25,6 +26,8 @@
       <div class="DataView-Footer">
         <div class="Footer-Left">
           <slot name="footer" />
+=======
+>>>>>>> f74b1c1624cf67178e8153bb3ffbc2fd6d34cb5e
           <div>
             <a class="Permalink" :href="permalink()">
               <time :datetime="formattedDate">
@@ -130,7 +133,12 @@
               </button>
             </div>
           </div>
+<<<<<<< HEAD
         </div>
+=======
+        </h3>
+        <slot name="infoPanel" />
+>>>>>>> f74b1c1624cf67178e8153bb3ffbc2fd6d34cb5e
       </div>
     </div>
 
@@ -139,16 +147,41 @@
         {{ $t('埋め込みコードをコピーしました') }}
       </div>
       <v-footer class="DataView-Footer">
+<<<<<<< HEAD
         <time :datetime="date">{{ $t('{date} 更新', { date }) }}</time>
         <slot name="footer" />
+=======
+        <time :datetime="date">{{
+          $t('{date} 時点', {
+            date: formattedDate
+          })
+        }}</time>
+        <a
+          v-if="url"
+          class="OpenDataLink"
+          :href="url"
+          target="_blank"
+          rel="noopener"
+        >
+          オープンデータへのリンク
+          <v-icon class="ExternalLinkIcon" size="15">
+            mdi-open-in-new
+          </v-icon>
+        </a>
+>>>>>>> f74b1c1624cf67178e8153bb3ffbc2fd6d34cb5e
       </v-footer>
     </div>
   </v-card>
 </template>
 
 <script lang="ts">
+<<<<<<< HEAD
 import Vue from 'vue'
 import { convertDatetimeToISO8601Format } from '@/utils/formatDate'
+=======
+import { Component, Prop, Vue } from 'vue-property-decorator'
+import { convertDateToFormat } from '@/utils/formatDate'
+>>>>>>> f74b1c1624cf67178e8153bb3ffbc2fd6d34cb5e
 
 export default Vue.extend({
   props: {
@@ -217,6 +250,7 @@ export default Vue.extend({
       navigator.clipboard.writeText(this.graphEmbedValue).then(() => {
         self.closeShareMenu()
 
+<<<<<<< HEAD
         self.showOverlay = true
         setTimeout(() => {
           self.showOverlay = false
@@ -265,16 +299,23 @@ export default Vue.extend({
     }
   }
 })
+=======
+  formattedDate: string = convertDateToFormat(this.date)
+}
+>>>>>>> f74b1c1624cf67178e8153bb3ffbc2fd6d34cb5e
 </script>
 
 <style lang="scss">
 /* stylelint-disable no-descending-specificity */
 
 .DataView {
+<<<<<<< HEAD
   @include card-container();
 
   height: 100%;
 
+=======
+>>>>>>> f74b1c1624cf67178e8153bb3ffbc2fd6d34cb5e
   &-Header {
     display: flex;
     align-items: flex-start;
@@ -324,7 +365,10 @@ export default Vue.extend({
     padding: 22px;
     height: 100%;
   }
+<<<<<<< HEAD
 
+=======
+>>>>>>> f74b1c1624cf67178e8153bb3ffbc2fd6d34cb5e
   &-Title {
     width: 100%;
     margin-bottom: 10px;
