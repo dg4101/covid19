@@ -93,9 +93,3 @@ sw.*
 
 # Netlify
 .netlify
-
-# OGP images
-ogp/*
-
-# Vagrant
-.vagrant
